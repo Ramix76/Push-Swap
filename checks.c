@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/10/25 13:21:44 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/10/28 11:35:46 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,11 @@ int	check_args(char **args)
 		if ((args[i][j] >= '0' && args[i][j] <= '9') || ((args[i][j] == '-')
 				&& (args[i][j + 1] >= '0' && args[i][j + 1] <= '9')))
 		{
-			printf("valor i1: %c\n valor j1: %c\n", args[i][j], args[i][j]);
 			j++;
-			printf("valor i2: %c\n valor j2: %c\n", args[i][j], args[i][j]);
 			while (args[i][j] >= '0' && args[i][j] <= '9')
 			{	
 				j++;
-				printf("valor i3: %c\n valor j3: %c\n", args[i][j], args[i][j]);
 			}
-			printf("valor I: %c\n valor J: %c\n", args[i][j], args[i][j]);
 			if (args[i][j] != '\0')
 				return (0);
 		}
@@ -50,3 +46,5 @@ int	check_args(char **args)
 	}
 	return (0);
 }
+
+

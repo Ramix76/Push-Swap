@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/10/25 12:42:15 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/10/28 11:02:12 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int argc, char **argv)
 	
 	if (argc == 1)
 		return (0);
+
+//	check_input(argv);
 	check_args(argv);
 //	check_doubles(argv);
 }

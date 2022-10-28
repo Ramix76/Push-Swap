@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/10/25 12:42:41 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/10/28 11:35:52 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 }					t_stack;
 */
 
+//size_t	check_input(char **input);
 int	check_args(char **args);
 //int  ┊check_doubles(char **args);
 
