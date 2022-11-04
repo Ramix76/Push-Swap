@@ -6,16 +6,17 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/10/28 11:35:52 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:28:39 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINES_H
 # define DEFINES_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include "../LIBFT/libft.h"
 
 /*typedef struct s_stack
 {
@@ -25,8 +26,8 @@
 }					t_stack;
 */
 
-//size_t	check_input(char **input);
-int	check_args(char **args);
-//int  ┊check_doubles(char **args);
+void	ft_error(void);
+int		check_args(char **argv);
+//int	┊check_doubles(char **argv);
 
 #endif

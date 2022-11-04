@@ -6,45 +6,54 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/10/28 11:35:46 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:28:31 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "defines.h"
 
-/*int  ┊check_doubles(char **args)
-{
-
-}*/
-
-int	check_args(char **args)
+/*int  ┊check_doubles(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	while (args[i])
+	j = 0;
+	while (argv[i][j])
+	{
+		if (ft_strn
+	}
+	return (0);
+}*/
+
+int	check_args(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
 	{
 		j = 0;
-		if ((args[i][j] >= '0' && args[i][j] <= '9') || ((args[i][j] == '-')
-				&& (args[i][j + 1] >= '0' && args[i][j + 1] <= '9')))
-		{
+		if (argv[i][j] == '+' || argv[i][j] == '-')
 			j++;
-			while (args[i][j] >= '0' && args[i][j] <= '9')
-			{	
-				j++;
-			}
-			if (args[i][j] != '\0')
-				return (0);
-		}
-		else
+		if (argv[i][j] == '\0')
+			ft_error();
+		while (argv[i][j])
 		{
-			printf("Error!!");
-			return (0);
+			if ((argv[i][j] == '-' || argv[i][j] == '+') \
+				|| (argv[i][j] >= '0' && argv[i][j] <= '9'))
+				j++;
+			else
+				ft_error();
 		}
 		i++;
 	}
 	return (0);
 }
 
-
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit (1);
+}
