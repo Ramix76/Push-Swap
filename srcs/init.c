@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 18:27:41 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/08 16:59:44 by framos-p         ###   ########.fr       */
+/*   Created: 2022/11/08 16:20:56 by framos-p          #+#    #+#             */
+/*   Updated: 2022/11/08 16:49:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/defines.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+t_stack	*init(char **argv)
 {
+	t_stack	*a;
+	int		i;
 	t_stack	*temp;
-
-	if (lst && new)
-	{	
-		if (*lst == NULL)
-			*lst = new;
-		else
-		{
-			temp = ft_lstlast(*lst);
-			new -> prev = *lst;
-			temp->next = new;
-		}
+	
+	i = 1;
+	a = ft_lstnew(ft_atoi(argv[i]));
+	if (!a)
+		exit (1);
+	i++;
+	while (argv[i])
+	{
+		temp = ft_lstnew(ft_atoi(argv[i]));
+		if (!temp)
+			exit (1);
+		ft_lstadd_back(&a, temp);
+		i++;
 	}
+	return (a);
 }

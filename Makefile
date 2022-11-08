@@ -6,7 +6,7 @@
 #    By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 16:46:08 by framos-p          #+#    #+#              #
-#    Updated: 2022/11/07 16:33:57 by framos-p         ###   ########.fr        #
+#    Updated: 2022/11/08 17:09:39 by framos-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MyPrintf			=	$(MyPrintf_DIR)/libftprintf.a
 INC					=	inc/defines.h
 SRCS				=	srcs/
 
-SRCS_FILES			=	$(SRCS)checks.c srcs/main.c 
+SRCS_FILES			=	$(SRCS)checks.c srcs/main.c srcs/init.c
 CC					=	gcc
 FLAGS				=	-g -Wall -Wextra -Werror
 RM 					=	rm -rf

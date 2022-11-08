@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/08 13:10:48 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:00:02 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	check_size(char **argv)
 
 	max = "2147483647";
 	min = "-2147483648";
-
 	i = 1;
 	len = ft_strlen(argv[i]);
 	while (argv[i])
@@ -34,7 +33,7 @@ int	check_size(char **argv)
 				ft_error();
 			else if ((len == 11 && ft_strncmp(argv[i], min, 11) > 0) 
 					|| (len == 10 && ft_strncmp(argv[i], max, 10) > 0))
-					ft_error();
+				ft_error();
 			j++;
 		}
 		i++;
@@ -93,5 +92,5 @@ int	check_args(char **argv)
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
-	exit (1);
+	exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:09:16 by framos-p          #+#    #+#             */
-/*   Updated: 2022/09/27 15:57:10 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:06:50 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_stack
+{
+	int				num;
+	size_t			index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}					t_stack;
 
 typedef struct s_list
 {
@@ -35,7 +43,7 @@ int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
-int			ft_lstsize(t_list *lst);
+int			ft_lstsize(t_stack *lst);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
@@ -48,8 +56,8 @@ void		*ft_memchr(const void *s, int c, size_t n);
 void		ft_putnbr_fd(int n, int fd);
 void		*ft_calloc(size_t count, size_t size);
 void		ft_lstadd_front(t_list **lst, t_list *new);
-void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
+void		ft_lstclear(t_stack **lst);
 void		ft_lstiter(t_list *lst, void (*f)(void*));
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 char		*ft_strrchr(const char *s, int c);
@@ -66,8 +74,8 @@ char		*ft_itoa(int n);
 size_t		ft_strlcat(char *dest, char *src, size_t size);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
 size_t		ft_strlen(const char *str);
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list		*ft_lstnew(void *content);
-t_list		*ft_lstlast(t_list *lst);
+t_stack		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_stack		*ft_lstnew(int num);
+t_stack		*ft_lstlast(t_stack *lst);
 
 #endif

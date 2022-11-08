@@ -6,29 +6,25 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 15:16:23 by framos-p          #+#    #+#             */
-/*   Updated: 2022/06/13 10:13:08 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:06:27 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_stack **lst)
 {
-	t_list	*temp;
-	t_list	*new;
+	t_stack	*temp;
+	t_stack	*new;
 
-	if (!*lst || !*del)
+	if (!*lst)
 		return ;
-	while (*lst != NULL)
-	{
-		temp = *lst;
-		while (temp)
-		{
-			del(temp -> content);
-			new = temp -> next;
-			free(temp);
-			temp = new;
-		}
-		*lst = NULL;
+	temp = *lst;
+	while (temp)
+	{	
+		new = temp -> next;
+		free(temp);
+		temp = new;
 	}
+	*lst = NULL;
 }
