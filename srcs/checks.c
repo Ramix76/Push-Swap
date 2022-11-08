@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/07 16:57:46 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:10:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,33 @@
 
 int	check_size(char **argv)
 {
+	int		len;
+	char	*max;
+	char	*min;
+	int		i;
+	int		j;
 
+	max = "2147483647";
+	min = "-2147483648";
+
+	i = 1;
+	len = ft_strlen(argv[i]);
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (len > 11)
+				ft_error();
+			else if ((len == 11 && ft_strncmp(argv[i], min, 11) > 0) 
+					|| (len == 10 && ft_strncmp(argv[i], max, 10) > 0))
+					ft_error();
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 int	check_doubles(char **argv)
 {
@@ -25,14 +51,11 @@ int	check_doubles(char **argv)
 	while (argv[i])
 	{
 		j = 1;
-		printf("valor:%s\n", argv[i]);
 		while (i - j > 0)
 		{
 			if (i > 1 && (!ft_strncmp(argv[i], argv[i - j], 11)))
 			{
-				printf("%s\n", argv[i]);
 				ft_error();
-				return (0);
 			}
 			j++;
 		}

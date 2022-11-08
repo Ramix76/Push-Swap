@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/07 14:04:24 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:08:20 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ int	main(int argc, char **argv)
 		ft_error();
 	check_args(argv);
 	check_doubles(argv);
+	check_size(argv);
 }
