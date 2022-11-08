@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/04 17:28:35 by framos-p         ###   ########.fr       */
+/*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
+/*   Updated: 2022/11/07 14:07:25 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "defines.h"
+#ifndef DEFINES_H
+# define DEFINES_H
 
-int	main(int argc, char **argv)
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include "../lib/LIBFT/libft.h"
+# include "../lib/Printf/includes/ft_printf.h"
+
+/*typedef struct s_stack
 {
-	if (argc == 1)
-		ft_error();
-	check_args(argv);
-//	check_doubles(argv);
-}
+	int				num;
+	size_t			index;
+	struct s_stack	*next;
+}					t_stack;
+*/
+
+void	ft_error(void);
+int		check_args(char **argv);
+int		check_doubles(char **argv);
+
+#endif

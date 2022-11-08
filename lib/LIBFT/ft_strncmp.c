@@ -6,9 +6,10 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 20:00:27 by framos-p          #+#    #+#             */
-/*   Updated: 2022/06/09 10:38:40 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:16:12 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
