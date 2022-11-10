@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:09:16 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/08 17:06:50 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/10 11:00:26 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char		*ft_itoa(int n);
 size_t		ft_strlcat(char *dest, char *src, size_t size);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
 size_t		ft_strlen(const char *str);
-t_stack		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_stack		*ft_lstnew(int num);
 t_stack		*ft_lstlast(t_stack *lst);
 

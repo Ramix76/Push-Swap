@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/08 17:31:49 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/10 11:04:17 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	printlst(t_stack *a)
 	temp = a;
 	while (temp)
 	{
-		ft_printf("valor num: %d\n", temp -> num);
+		ft_printf("valor num: %d index: %d\n", temp -> num, temp -> index);
 		temp = temp -> next;
 	}
 }
