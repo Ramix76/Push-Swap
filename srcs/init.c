@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:20:56 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/10 11:08:19 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:38:38 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stack	*init(char **argv)
 	t_stack	*a;
 	int		i;
 	t_stack	*temp;
-	
+
 	i = 1;
 	a = ft_lstnew(ft_atoi(argv[i]));
 	if (!a)

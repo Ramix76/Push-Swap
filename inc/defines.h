@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/10 11:06:58 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/12 20:08:53 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int		check_doubles(char **argv);
 int		check_size(char **argv);
 t_stack	*init(char **argv);
 void	indexation(t_stack **lst);
+void	swap(t_stack **lst);
+void	push(t_stack **a, t_stack **b);
 
 #endif

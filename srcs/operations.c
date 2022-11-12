@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 11:18:21 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/11 12:48:47 by framos-p         ###   ########.fr       */
+/*   Created: 2022/11/11 12:49:02 by framos-p          #+#    #+#             */
+/*   Updated: 2022/11/12 20:08:47 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/defines.h"
 
-static int	put_index(int ind, t_stack **lst)
+void	swap(t_stack **lst)
 {
 	t_stack	*temp;
-	int		i;
+	t_stack	*temp2;
 
-	i = 0;
 	temp = *lst;
-	while (temp)
-	{
-		if (temp -> num < ind)
-			i++;
-		temp = temp -> next;
-	}
-	return (i);
+	temp2 = temp -> next;
+	if (temp -> next == 0)
+		return ;
+	temp -> next = temp2 -> next;
+	temp -> prev = temp2;
+	if (temp2 -> next != 0)
+		temp2 -> next -> prev = temp;
+	temp2 -> next = temp;
+	temp2 -> prev = NULL;
+	*lst = temp2;
 }
 
-void	indexation(t_stack **lst)
+void	push(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
-	temp = *lst;
-	while (temp)
-	{
-		temp -> index = put_index(temp -> num, lst);
-		temp = temp -> next;
-	}
+	temp = *a;
+	*a = (*a) -> next;
+	if (*a)
+		(*a) -> prev = NULL;
+	temp -> next = *b;
+	if (*b)
+		(*b) -> prev = temp;
+	*b = temp;
 }

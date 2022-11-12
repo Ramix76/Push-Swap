@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/10 10:52:36 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:25:49 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	check_size(char **argv)
 		{
 			if (len > 11)
 				ft_error();
-			else if ((len == 11 && ft_strncmp(argv[i], min, 11) > 0) 
-					|| (len == 10 && ft_strncmp(argv[i], max, 10) > 0))
+			else if ((len == 11 && ft_strncmp(argv[i], min, 11) > 0)
+				|| (len == 10 && ft_strncmp(argv[i], max, 10) > 0))
 				ft_error();
 			j++;
 		}

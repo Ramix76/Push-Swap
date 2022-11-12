@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:27:41 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/08 17:41:16 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:40:42 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		else
 		{
 			temp = ft_lstlast(*lst);
-			new -> prev = *lst;
-			temp->next = new;
+			new -> prev = temp;
+			temp-> next = new;
 		}
 	}
 }
