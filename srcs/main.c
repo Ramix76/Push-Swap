@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/14 13:03:32 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:18:10 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,34 @@ int	main(int argc, char **argv)
 	a = init(argv);
 	b = NULL;
 	printlst(a);
-	//swap(&a, 'a');
-	//swap(&a, 'a');
-	//swap(&a, 'a');
-	//push(&a, &b, 'b');
-	//push(&a, &b, c);
-	//push(&a, &b, c);
-	rev_rotate(&a, 'a');
-	//ft_printf("stack a------------\n");
+//	swap(&a, 'a');
+	if (stack_in_order(&a))
+		resolve(&a, &b, argc);
 	printlst(a);
-	//ft_printf("stack b------------\n");
-	//printlst(b); 
+}
+
+int	stack_in_order(t_stack **a)
+{
+	t_stack	*first;
+	t_stack	*second;
+
+	first = *a;
+	while (first -> next)
+	{
+		second = first -> next;
+		if (first -> index > second -> index)
+			return (1);
+		first = second;
+	}
+	return (0);
+}
+
+void	resolve(t_stack **a, t_stack **b, int argc)
+{
+	(void)b;
+
+	if (argc - 1 == 2)
+		two_numbers(a, 'a');
+	else if (argc - 1 == 3)
+		three_numbers(
 }

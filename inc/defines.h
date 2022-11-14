@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/14 12:52:50 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:18:20 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@
 # include "../lib/LIBFT/libft.h"
 # include "../lib/Printf/includes/ft_printf.h"
 
+int		stack_in_order(t_stack **a);
 int		check_args(char **argv);
 int		check_doubles(char **argv);
 int		check_size(char **argv);
+void	resolve(t_stack **a, t_stack **b, int argc); 
+void	two_numbers(t_stack **a, char c);
 void	indexation(t_stack **lst);
 void	swap(t_stack **lst, char c);
 void	push(t_stack **a, t_stack **b, char c);
