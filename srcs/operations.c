@@ -6,13 +6,13 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:49:02 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/12 20:08:47 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:13:19 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/defines.h"
 
-void	swap(t_stack **lst)
+void	swap(t_stack **lst, char c)
 {
 	t_stack	*temp;
 	t_stack	*temp2;
@@ -28,9 +28,11 @@ void	swap(t_stack **lst)
 	temp2 -> next = temp;
 	temp2 -> prev = NULL;
 	*lst = temp2;
+	if (c)
+		ft_printf("s%c\n", c);
 }
 
-void	push(t_stack **a, t_stack **b)
+void	push(t_stack **a, t_stack **b, char c)
 {
 	t_stack	*temp;
 
@@ -42,4 +44,39 @@ void	push(t_stack **a, t_stack **b)
 	if (*b)
 		(*b) -> prev = temp;
 	*b = temp;
+	if (c)
+		ft_printf("p%c\n", c);
 }
+
+void	rotate(t_stack **lst, char c)
+{
+	t_stack	*temp;
+	t_stack	*last;
+
+	temp = *lst;
+	temp -> next -> prev = NULL;
+	*lst = temp -> next;
+	last = ft_lstlast(*lst);
+	last -> next = temp;
+	temp -> prev = last;
+	temp -> next = NULL;
+	if (c)
+		ft_printf("r%c\n", c);
+}
+
+void	rev_rotate(t_stack **lst, char c)
+{
+	t_stack	*temp;
+	t_stack	*last;
+
+	temp = *lst;
+	last = ft_lstlast(*lst);
+	last -> prev -> next = NULL;
+	last -> prev = NULL;
+	*lst = last;
+	last -> next = temp;
+	temp -> prev = last;
+	if (c)
+		ft_printf("rr%c\n", c);
+}
+
