@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/14 16:18:10 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:12:53 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ int	main(int argc, char **argv)
 	check_size(argv);
 	a = init(argv);
 	b = NULL;
+	ft_printf("Stack A:-----------\n");
 	printlst(a);
-//	swap(&a, 'a');
 	if (stack_in_order(&a))
 		resolve(&a, &b, argc);
 	printlst(a);
+	ft_printf("Stack B:-----------\n");
+	printlst(b);
 }
 
 int	stack_in_order(t_stack **a)
@@ -66,5 +68,7 @@ void	resolve(t_stack **a, t_stack **b, int argc)
 	if (argc - 1 == 2)
 		two_numbers(a, 'a');
 	else if (argc - 1 == 3)
-		three_numbers(
+		three_numbers(a, 'a');
+	else if (argc - 1 == 5)
+		five_numbers(a, b);
 }

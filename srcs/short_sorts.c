@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:30:06 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/14 16:18:14 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:49:02 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,45 @@ void	two_numbers(t_stack **a, char c)
 }
 
 void	three_numbers(t_stack **a, char c)
+{
+	size_t	first;
+	size_t	second;
+	size_t	last;
 
+	first = (*a) -> index;
+	second = (*a) -> next -> index;
+	last = (*a) -> next -> next -> index;
+	if (first > second && first < last)
+		swap(a, c);
+	else if (first > second && second > last)
+	{
+		swap(a, c);
+		rev_rotate(a, c);
+	}
+	else if (first > second && first > last)
+		rotate(a, c);
+	else if (first < second && second > last && first < last)
+	{
+		swap(a, c);
+		rotate(a, c);
+	}
+	else
+		rev_rotate(a, c);
+}
+
+void	five_numbers(t_stack **a, t_stack **b)
+{
+	push(a, b, 'b');
+	push(a, b, 'b');
+	indexation(a);
+	three_numbers(a, 'a');
+	push(b, a, 'a');
+	if (stack_in_order(a))
+		rotate(a, 'a');
+	push(b, a, 'a');
+	while (stack_in_order(a))
+	{
+		rotate(a, 'a');
+		return ;
+	}
+}
