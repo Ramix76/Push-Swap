@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:18:21 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/15 13:02:20 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:33:18 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,30 @@ void	indexation(t_stack **lst)
 	}
 }
 
-int	is_min(t_stack **lst)
+size_t	is_min(t_stack **a, size_t n)
 {
-	int		min;
-	t_stack	*stack;
+	t_stack	*temp;
 
-	stack = *lst;
-	min = 0;
-	while (stack)
+	temp = *a;
+	while (temp)
 	{
-		if (stack -> index == 0)
+		if (temp -> index < n)
 			return (0);
-		min++;
-		stack = stack -> next;
+		temp = temp -> next;
 	}
-	return (min);
+	return (1);
+}
+
+size_t	is_max(t_stack **a, size_t n)
+{
+	t_stack	*temp;
+
+	temp = *a;
+	while (temp)
+	{
+		if (temp -> index > n)
+			return (0);
+		temp = temp -> next;
+	}
+	return (1);
 }

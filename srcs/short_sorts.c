@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:30:06 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/15 12:49:02 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:27:37 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,29 @@ void	three_numbers(t_stack **a, char c)
 
 void	five_numbers(t_stack **a, t_stack **b)
 {
+	size_t	last;
+
+	last = ft_lstlast(*a) -> index; 
 	push(a, b, 'b');
 	push(a, b, 'b');
-	indexation(a);
-	three_numbers(a, 'a');
-	push(b, a, 'a');
 	if (stack_in_order(a))
+		three_numbers(a, 'a');
+	while (*b)
+	{
+		if ((is_max(a, (*b) -> index) && is_max(a, last)) || (is_min(a, (*b) -> index) && is_min(a, (*a) -> index))
+			|| ((*b) -> index < (*a) -> index && (*b) -> index > last))
+			push(b, a, 'a');
+		else if ((*a) -> next -> index > (*b) -> index && (*a) -> next -> next -> index < (*b) -> index)
+			rev_rotate(a, 'a');
+		else
+			rotate(a, 'a');
+	}
+	/*	if (stack_in_order(a))
 		rotate(a, 'a');
 	push(b, a, 'a');
 	while (stack_in_order(a))
 	{
 		rotate(a, 'a');
 		return ;
-	}
+	}*/
 }

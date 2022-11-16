@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/15 13:02:59 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:27:37 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include "../lib/LIBFT/libft.h"
 # include "../lib/Printf/includes/ft_printf.h"
 
-int		is_min(t_stack **lst);
+size_t	is_min(t_stack **a, size_t n);
+size_t	is_max(t_stack **a, size_t n);
 int		stack_in_order(t_stack **a);
 int		check_args(char **argv);
 int		check_doubles(char **argv);
