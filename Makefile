@@ -6,7 +6,7 @@
 #    By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 16:46:08 by framos-p          #+#    #+#              #
-#    Updated: 2022/11/16 18:27:37 by framos-p         ###   ########.fr        #
+#    Updated: 2022/11/17 16:40:13 by framos-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MyPrintf			=	$(MyPrintf_DIR)/libftprintf.a
 INC					=	inc/defines.h
 SRCS				=	srcs/
 
-SRCS_FILES			=	$(SRCS)checks.c srcs/main.c srcs/init.c srcs/utils.c srcs/operations.c srcs/short_sorts.c
+SRCS_FILES			=	$(SRCS)checks.c srcs/main.c srcs/init.c srcs/utils.c srcs/operations.c srcs/short_sorts.c srcs/smart_moves.c
 CC					=	gcc
 FLAGS				=	-g -Wall -Wextra -Werror
 RM 					=	rm -rf
@@ -49,11 +49,11 @@ all:
 					@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME)::			$(MyLib) $(MyPrintf) $(OBJS)
-					@echo "$(YELLOW)Linking...$(GREEN)"
+					@echo "\n$(YELLOW)Linking...$(GREEN)\n"
 					@$(CC) $(FLAGS) $(MyLib) $(MyPrintf) $(OBJS) -o $(NAME)
 
 $(NAME)::
-					@echo "$(BLUE)PUSH_SWAP COMPILED! ✅$(DEF_COLOR)"
+					@echo "\n$(BLUE)PUSH_SWAP COMPILED! ✅$(DEF_COLOR)\n"
 
 clean:
 					@${RM} $(OBJS) $(NAME)

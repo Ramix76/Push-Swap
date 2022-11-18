@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:30:06 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/16 18:27:37 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:23:54 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ void	five_numbers(t_stack **a, t_stack **b)
 		if ((is_max(a, (*b) -> index) && is_max(a, last)) || (is_min(a, (*b) -> index) && is_min(a, (*a) -> index))
 			|| ((*b) -> index < (*a) -> index && (*b) -> index > last))
 			push(b, a, 'a');
-		else if ((*a) -> next -> index > (*b) -> index && (*a) -> next -> next -> index < (*b) -> index)
+		else if (((*a) -> next -> index < (*b) -> index && (*a) -> next -> next -> index > (*b) -> index)
+			   	|| ((*b) -> index < (*a) -> next -> index && (*b) -> index > (*a) -> next -> next -> index))
 			rev_rotate(a, 'a');
 		else
 			rotate(a, 'a');
