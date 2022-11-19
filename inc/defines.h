@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/18 13:16:24 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/19 13:05:22 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@
 
 size_t	is_min(t_stack **a, size_t n);
 size_t	is_max(t_stack **a, size_t n);
-size_t		find_smallest(t_stack **a);
-size_t		find_biggest(t_stack **a);
+size_t	find_smallest(t_stack **a);
+size_t	find_biggest(t_stack **a);
 int		stack_in_order(t_stack **a);
 int		check_args(char **argv);
 int		check_doubles(char **argv);
 int		check_size(char **argv);
-void	resolve(t_stack **a, t_stack **b, int argc); 
+void	min_num_on_top(t_stack **a);
+void	max_num_on_top(t_stack **a);
+void	resolve(t_stack **a, t_stack **b, int argc);
 void	two_numbers(t_stack **a, char c);
 void	three_numbers(t_stack **a, char c);
 void	five_numbers(t_stack **a, t_stack **b);

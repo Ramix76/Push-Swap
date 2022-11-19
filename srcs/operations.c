@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:49:02 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/17 10:18:52 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:18:12 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ void	push(t_stack **a, t_stack **b, char c)
 	t_stack	*temp;
 
 	temp = *a;
-	*a = (*a) -> next;
+	*a = (*a)-> next;
 	if (*a)
-		(*a) -> prev = NULL;
+		(*a)-> prev = NULL;
 	temp -> next = *b;
 	if (*b)
-		(*b) -> prev = temp;
+		(*b)-> prev = temp;
 	*b = temp;
 	if (c)
 		ft_printf("p%c\n", c);
@@ -79,4 +79,3 @@ void	rev_rotate(t_stack **lst, char c)
 	if (c)
 		ft_printf("rr%c\n", c);
 }
-

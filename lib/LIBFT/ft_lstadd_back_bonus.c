@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:27:41 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/12 19:40:42 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:15:40 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 		{
 			temp = ft_lstlast(*lst);
 			new -> prev = temp;
-			temp-> next = new;
+			temp -> next = new;
 		}
 	}
 }
