@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/19 13:05:22 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/20 17:14:35 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int	main(int argc, char **argv)
 	check_size(argv);
 	a = init(argv);
 	b = NULL;
-	ft_printf("Stack A:-----------\n");
-	printlst(a);
-	ft_printf("Smallest is: %d\n", find_smallest(&a));
-	ft_printf("Biggest is: %d\n", find_biggest(&a));
+//	ft_printf("Stack A:-----------\n");
+//	printlst(a);
+//	ft_printf("Smallest is: %d\n", find_smallest(&a));
+//	ft_printf("Biggest is: %d\n", find_biggest(&a));
 	if (stack_in_order(&a))
 		resolve(&a, &b, argc);
-	printlst(a);
-	ft_printf("Stack B:-----------\n");
-	printlst(b);
+//	printlst(a);
+//	ft_printf("Stack B:-----------\n");
+//	printlst(b);
 }
 
 int	stack_in_order(t_stack **a)
