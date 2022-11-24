@@ -6,7 +6,7 @@
 #    By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/25 16:46:08 by framos-p          #+#    #+#              #
-#    Updated: 2022/11/19 13:05:22 by framos-p         ###   ########.fr        #
+#    Updated: 2022/11/24 16:22:49 by framos-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MyPrintf			=	$(MyPrintf_DIR)/libftprintf.a
 INC					=	inc/defines.h
 SRCS				=	srcs/
 
-SRCS_FILES			=	$(SRCS)checks.c srcs/main.c srcs/init.c srcs/utils.c srcs/operations.c srcs/short_sorts.c srcs/smart_moves.c
+SRCS_FILES			=	$(SRCS)checks.c srcs/main.c srcs/init.c srcs/utils.c srcs/operations.c srcs/short_sorts.c srcs/smart_moves.c srcs/long_sorts.c
 CC					=	gcc
 FLAGS				=	-g -Wall -Wextra -Werror
 RM 					=	rm -rf

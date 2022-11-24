@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:30:06 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/20 17:00:52 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:36:35 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,14 @@ void	three_numbers(t_stack **a, char c)
 
 void	five_numbers(t_stack **a, t_stack **b)
 {
-		max_num_on_top(a);
+		min_num_on_top(a, 'a');
 		push(a, b, 'b');
-		max_num_on_top(a);
+		min_num_on_top(a, 'a');
 		push(a, b, 'b');
-		three_numbers(a, 'a');
+		if (stack_in_order(a))
+			three_numbers(a, 'a');
 		push(b, a, 'a');
-		rotate(a, 'a');
 		push(b, a, 'a');
-		rotate(a, 'a');
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:32:36 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/20 17:13:55 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:36:55 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ size_t	find_biggest(t_stack **a)
 	return (0);
 }
 
-void	min_num_on_top(t_stack **a)
+void	min_num_on_top(t_stack **a, char c)
 {
 	t_stack		*temp;
 	size_t		lenght;
@@ -56,14 +56,14 @@ void	min_num_on_top(t_stack **a)
 	if (find_smallest(a) == 0)
 		return ;
 	else if (find_smallest(a) == lenght / 2)
-		rotate(a, 'a');
+		rotate(a, c);
 	while ((find_smallest(a) < lenght / 2) && find_smallest(a) > 0)
-		rotate(a, 'a');
+		rotate(a, c);
 	while ((find_smallest(a) > lenght / 2) && find_smallest(a) < lenght)
-		rev_rotate(a, 'a');
+		rev_rotate(a, c);
 }
 
-void	max_num_on_top(t_stack **a)
+void	max_num_on_top(t_stack **a, char c)
 {
 	t_stack		*temp;
 	size_t		lenght;
@@ -73,9 +73,9 @@ void	max_num_on_top(t_stack **a)
 	if (find_biggest(a) == 0)
 		return ;
 	else if (find_biggest(a) == lenght / 2)
-		rotate(a, 'a');
+		rotate(a, c);
 	while ((find_biggest(a) < lenght / 2) && find_biggest(a) > 0)
-		rotate(a, 'a');
+		rotate(a, c);
 	while ((find_biggest(a) > lenght / 2) && find_biggest(a) < lenght)
-		rev_rotate(a, 'a');
+		rev_rotate(a, c);
 }

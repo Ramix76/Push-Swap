@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/14 15:12:54 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:29:50 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,13 @@ int	check_args(char **argv)
 	while (argv[i])
 	{
 		j = 0;
-		if (argv[i][j] == '+' || argv[i][j] == '-')
+		if (argv[i][j] == '-')
 			j++;
 		if (argv[i][j] == '\0')
 			ft_error();
 		while (argv[i][j])
 		{
-			if ((argv[i][j] == '-' || argv[i][j] == '+') \
+			if ((argv[i][0] == '-' && j == 0) \
 				|| (argv[i][j] >= '0' && argv[i][j] <= '9'))
 				j++;
 			else

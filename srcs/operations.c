@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:49:02 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/18 20:18:12 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:29:34 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,18 @@ void	rotate(t_stack **lst, char c)
 	t_stack	*temp;
 	t_stack	*last;
 
-	temp = *lst;
-	temp -> next -> prev = NULL;
-	*lst = temp -> next;
-	last = ft_lstlast(*lst);
-	last -> next = temp;
-	temp -> prev = last;
-	temp -> next = NULL;
-	if (c)
-		ft_printf("r%c\n", c);
+	if (ft_lstsize(*lst) > 1)
+	{
+		temp = *lst;
+		temp -> next -> prev = NULL;
+		*lst = temp -> next;
+		last = ft_lstlast(*lst);
+		last -> next = temp;
+		temp -> prev = last;
+		temp -> next = NULL;
+		if (c)
+			ft_printf("r%c\n", c);
+	}
 }
 
 void	rev_rotate(t_stack **lst, char c)
