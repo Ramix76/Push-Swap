@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/24 17:28:14 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/25 15:23:20 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	rotate(t_stack **lst, char c);
 void	rev_rotate(t_stack **lst, char c);
 void	ft_error(void);
 t_stack	*init(char **argv);
+void	printlst(t_stack *a);
 
 #endif

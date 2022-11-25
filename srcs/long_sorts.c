@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:25:09 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/24 18:30:30 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:41:10 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks)
 
 	count = 0;
 	cut = ft_lstsize(*a) / chunks;
-	while (++count < chunks)
+	while (count < chunks)
 	{
 		x = 0;
 		while (x < cut)
@@ -33,10 +33,11 @@ void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks)
 			else
 				rotate(a, 'a');
 		}
+		count++;
 		indexation(a);
 	}
-	while ((*a)-> index != 0)
-		move_to_b(a, b, cut);
+	while (*a && (*a)-> index != 0)
+			move_to_b(a, b, cut);
 	indexation(b);
 	return_to_a(a, b);
 }
