@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/25 15:23:20 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:45:05 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ int		stack_in_order(t_stack **a);
 int		check_args(char **argv);
 int		check_doubles(char **argv);
 int		check_size(char **argv);
+void	free_all(t_stack **a);
 void	check_order_stack_a(t_stack **a);
 void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks);
 void	move_to_b(t_stack **a, t_stack **b, size_t cut);
 void	return_to_a(t_stack **a, t_stack **b);
 void	min_num_on_top(t_stack **a, char c);
-void	max_num_on_top(t_stack **a, char c);
+void	max_num_on_top(t_stack **a, t_stack **b, char c);
 void	resolve(t_stack **a, t_stack **b, int argc);
 void	two_numbers(t_stack **a, char c);
 void	three_numbers(t_stack **a, char c);

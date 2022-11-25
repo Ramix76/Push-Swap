@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:30:06 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/24 18:36:35 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:23:38 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,47 +46,13 @@ void	three_numbers(t_stack **a, char c)
 
 void	five_numbers(t_stack **a, t_stack **b)
 {
+	while (ft_lstsize(*a) > 3)	
+	{
 		min_num_on_top(a, 'a');
 		push(a, b, 'b');
-		min_num_on_top(a, 'a');
-		push(a, b, 'b');
-		if (stack_in_order(a))
-			three_numbers(a, 'a');
-		push(b, a, 'a');
-		push(b, a, 'a');
-}
-
-/*
-void	five_numbers(t_stack **a, t_stack **b)
-{
-	size_t	last;
-
-	last = ft_lstlast(*a) -> index; 
-	push(a, b, 'b');
-	push(a, b, 'b');
+	}
 	if (stack_in_order(a))
 		three_numbers(a, 'a');
 	while (*b)
-	{
-		if ((is_max(a, (*b) -> index) && is_max(a, last)) 
-			|| (is_min(a, (*b) -> index) && is_min(a, (*a) -> index))
-			|| ((*b) -> index < (*a) -> index && (*b) -> index > last))
-			push(b, a, 'a');
-		else if (((*a) -> next -> index < (*b) -> index 
-			&& (*a) -> next -> next -> index > (*b) -> index)
-			|| ((*b) -> index < (*a) -> next -> index 
-			&& (*b) -> index > (*a) -> next -> next -> index))
-			rev_rotate(a, 'a');
-		else
-			rotate(a, 'a');
-	}
-	if (stack_in_order(a))
-		rotate(a, 'a');
-	push(b, a, 'a');
-	while (stack_in_order(a))
-	{
-		rotate(a, 'a');
-		return ;
-	}
+		push(b, a, 'a');
 }
-*/

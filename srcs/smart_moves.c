@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:32:36 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/24 18:36:55 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/25 20:31:56 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,32 @@ void	min_num_on_top(t_stack **a, char c)
 		rev_rotate(a, c);
 }
 
-void	max_num_on_top(t_stack **a, char c)
+void	max_num_on_top(t_stack **a, t_stack **b, char c)
 {
 	t_stack		*temp;
 	size_t		lenght;
 
-	temp = *a;
-	lenght = ft_lstsize(*a);
-	if (find_biggest(a) == 0)
+	temp = *b;
+	lenght = ft_lstsize(*b);
+	while (!is_max(b, temp-> index))
+			temp = temp-> next;
+	if (find_biggest(b) == 0)
 		return ;
-	else if (find_biggest(a) == lenght / 2)
-		rotate(a, c);
-	while ((find_biggest(a) < lenght / 2) && find_biggest(a) > 0)
-		rotate(a, c);
-	while ((find_biggest(a) > lenght / 2) && find_biggest(a) < lenght)
-		rev_rotate(a, c);
+	else if (temp-> index - 1 == (*b)->index)
+	{
+		  	push(b, a, 'a');
+//			printf("%d\n", (*a)->num);
+	}
+	else if (temp-> index - 2 == (*b)-> index)
+		{
+			push(b, a, 'a');
+//			printf("%d\n", (*a)->num);
+			rotate(a, 'a');
+		}
+	if (find_biggest(b) == lenght / 2)
+		rotate(b, c);
+	while ((find_biggest(b) < lenght / 2) && find_biggest(b) > 0)
+		rotate(b, c);
+	while ((find_biggest(b) > lenght / 2) && find_biggest(b) < lenght)
+		rev_rotate(b, c);
 }
