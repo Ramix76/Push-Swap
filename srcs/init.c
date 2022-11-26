@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:20:56 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/25 19:22:22 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/26 19:10:59 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,32 @@ t_stack	*init(char **argv)
 	}
 	indexation(&a);
 	return (a);
+}
+
+static int	put_index(int ind, t_stack **lst)
+{
+	t_stack	*temp;
+	int		i;
+
+	i = 0;
+	temp = *lst;
+	while (temp)
+	{
+		if (temp -> num < ind)
+			i++;
+		temp = temp -> next;
+	}
+	return (i);
+}
+
+void	indexation(t_stack **lst)
+{
+	t_stack	*temp;
+
+	temp = *lst;
+	while (temp)
+	{
+		temp -> index = put_index(temp -> num, lst);
+		temp = temp -> next;
+	}
 }

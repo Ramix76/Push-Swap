@@ -6,24 +6,12 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/25 20:31:56 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/26 19:46:34 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/defines.h"
-/*
-void	printlst(t_stack *a)
-{
-	t_stack	*temp;
 
-	temp = a;
-	while (temp)
-	{
-		ft_printf("valor num: %d index: %d\n", temp -> num, temp -> index);
-		temp = temp -> next;
-	}
-}
-*/
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -36,16 +24,9 @@ int	main(int argc, char **argv)
 	check_size(argv);
 	a = init(argv);
 	b = NULL;
-//	ft_printf("Stack A:-----------\n");
-//	printlst(a);
-//	ft_printf("Smallest is: %d\n", find_smallest(&a));
-//	ft_printf("Biggest is: %d\n", find_biggest(&a));
 	if (stack_in_order(&a))
 		resolve(&a, &b, argc);
-//	exit(1);
-//	printlst(a);
-//	ft_printf("Stack B:-----------\n");
-//	printlst(b);
+	exit(1);
 }
 
 int	stack_in_order(t_stack **a)
@@ -79,17 +60,3 @@ void	resolve(t_stack **a, t_stack **b, int argc)
 	else if (argc - 1 <= 500)
 		hundred_numbers(a, b, 10);
 }
-/*
-void	free_all(t_stack **a)
-{
-	t_stack	*temp;
-
-	while ((*a)-> next != NULL)
-	{
-		temp = *a;
-		a = &temp-> next;
-		free(temp);
-	}
-	free(a);
-}
-*/

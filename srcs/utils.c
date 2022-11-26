@@ -6,38 +6,35 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:18:21 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/25 19:24:17 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/11/26 19:46:34 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/defines.h"
 
-static int	put_index(int ind, t_stack **lst)
+void	sort_max1(t_stack **a, t_stack **b, t_stack *temp)
 {
-	t_stack	*temp;
-	int		i;
-
-	i = 0;
-	temp = *lst;
-	while (temp)
+	if (temp-> index - 1 == (*b)->index)
+		push(b, a, 'a');
+	else if (temp-> index - 2 == (*b)-> index)
 	{
-		if (temp -> num < ind)
-			i++;
-		temp = temp -> next;
+		push(b, a, 'a');
+		rotate(a, 'a');
 	}
-	return (i);
+	else
+		rotate(b, 'b');
 }
 
-void	indexation(t_stack **lst)
+void	sort_max2(t_stack **a, t_stack **b,t_stack *temp)
 {
-	t_stack	*temp;
-
-	temp = *lst;
-	while (temp)
+	if (temp-> index - 1 == (*b)->index)
+		  	push(b, a, 'a');
+	else if (temp-> index - 2 == (*b)-> index)
 	{
-		temp -> index = put_index(temp -> num, lst);
-		temp = temp -> next;
+		push(b, a, 'a');
+		rotate(a, 'a');
 	}
+	rev_rotate(b, 'b');
 }
 
 size_t	is_min(t_stack **a, size_t n)
