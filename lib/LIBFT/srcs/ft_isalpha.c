@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 17:34:44 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/08 16:05:41 by framos-p         ###   ########.fr       */
+/*   Created: 2022/05/09 15:19:45 by framos-p          #+#    #+#             */
+/*   Updated: 2022/12/05 13:05:48 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_stack*lst)
+int	ft_isalpha(int c)
 {
-	int		i;
-
-	i = 0;
-	while (lst)
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
-		i++;
-		lst = lst -> next;
+		return (1);
 	}
-	return (i);
+	return (0);
 }

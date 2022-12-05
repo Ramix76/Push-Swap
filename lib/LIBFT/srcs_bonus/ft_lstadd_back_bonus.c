@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:19:45 by framos-p          #+#    #+#             */
-/*   Updated: 2022/05/20 11:41:24 by framos-p         ###   ########.fr       */
+/*   Created: 2022/06/03 18:27:41 by framos-p          #+#    #+#             */
+/*   Updated: 2022/12/05 13:44:55 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
-		return (1);
+	t_stack	*temp;
+
+	if (lst && new)
+	{	
+		if (*lst == NULL)
+			*lst = new;
+		else
+		{
+			temp = ft_lstlast(*lst);
+			new -> prev = temp;
+			temp -> next = new;
+		}
 	}
-	return (0);
 }

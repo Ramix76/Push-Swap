@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/26 19:31:41 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:09:12 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "../lib/LIBFT/libft.h"
+# include "../lib/LIBFT/inc/libft.h"
 # include "../lib/Printf/includes/ft_printf.h"
 
 size_t	is_min(t_stack **a, size_t n);

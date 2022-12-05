@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:09:16 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/16 14:33:11 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:06:10 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 typedef struct s_stack
 {
@@ -25,7 +26,7 @@ typedef struct s_stack
 	size_t			index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-}					t_stack;
+}				t_stack;
 
 typedef struct s_list
 {
@@ -57,7 +58,7 @@ void		ft_putnbr_fd(int n, int fd);
 void		*ft_calloc(size_t count, size_t size);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
-void		ft_lstclear(t_stack **lst);
+void		ft_lstclear(t_stack**lst);
 void		ft_lstiter(t_list *lst, void (*f)(void*));
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 char		*ft_strrchr(const char *s, int c);
@@ -68,12 +69,14 @@ char		**ft_split(char const *s, char c);
 char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin_line(char *s1, char *s2);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_itoa(int n);
 size_t		ft_strlcat(char *dest, char *src, size_t size);
 size_t		ft_strlcpy(char *dest, char *src, size_t size);
 size_t		ft_strlen(const char *str);
+t_list		*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
 t_stack		*ft_lstnew(int num);
 t_stack		*ft_lstlast(t_stack *lst);
 

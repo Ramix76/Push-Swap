@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:25:09 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/26 19:46:34 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:20:26 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks)
 		count++;
 		indexation(a);
 	}
-	while (*a && (*a)-> index != 0)
+	while (*a)
 			move_to_b(a, b, cut);
 	indexation(b);
 	return_to_a(a, b);
@@ -45,7 +45,7 @@ void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks)
 void	move_to_b(t_stack **a, t_stack **b, size_t cut)
 {
 	push(a, b, 'b');
-	if ((*b)-> index < cut / 2)
+	if ((*b)-> index <= cut / 2)
 		rotate(b, 'b');
 }
 
