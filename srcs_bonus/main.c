@@ -6,16 +6,17 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/05 17:09:36 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:41:57 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/defines.h"
+#include "../inc/checker.h"
 
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		move;
 
 	if (argc == 1)
 		return (0);
@@ -24,39 +25,67 @@ int	main(int argc, char **argv)
 	check_size(argv);
 	a = init(argv);
 	b = NULL;
-	if (stack_in_order(&a))
-		resolve(&a, &b, argc);
+	reading(a, b, &move);
+	stack_in_order(a, b);
 	exit(1);
 }
 
-int	stack_in_order(t_stack **a)
+void	reading(t_stack *a, t_stack *b, int *move)
+{
+	char	*line;
+
+	line = get_next_line(0);
+	while (line)
+	{
+		read_instructions(line, a, b, move);
+		if (*move == 1)
+		{
+			free(line);
+			if (ft_lstsize(a) > 0)
+				exit(1);
+			if (ft_lstsize(b) > 0)
+				exit(1);
+			ft_error();
+		}
+		free(line);
+		line = get_next_line(0);
+	}
+	free(line);
+}
+
+void	stack_in_order(t_stack *a, t_stack *b)
 {
 	t_stack	*first;
 	t_stack	*second;
+	int		i;
 
-	first = *a;
+	first = a;
+	if (ft_lstsize(b) != 0)
+		incorrect(a, b);
+	i = 0;
 	while (first -> next)
 	{
 		second = first -> next;
 		if (first -> index > second -> index)
-			return (1);
+			i++;
 		first = second;
 	}
-	return (0);
+	if (i == 0)
+	{
+		write(1, "OK", 2);
+		write(1, "\n", 1);
+		return ;
+	}
+	incorrect(a, b);
 }
 
-void	resolve(t_stack **a, t_stack **b, int argc)
+void	incorrect(t_stack *a, t_stack *b)
 {
-	if (argc - 1 == 2)
-		two_numbers(a, 'a');
-	else if (argc - 1 == 3)
-		three_numbers(a, 'a');
-	else if (argc - 1 <= 5)
-		five_numbers(a, b);
-	else if (argc - 1 < 21)
-		hundred_numbers(a, b, 1);
-	else if (argc - 1 <= 100)
-		hundred_numbers(a, b, 5);
-	else if (argc - 1 <= 500)
-		hundred_numbers(a, b, 10);
+	if (ft_lstsize(a) > 0)
+		exit(1);
+	if (ft_lstsize(b) > 0)
+		exit(1);
+	write(1, "0", 2);
+	write(1, "\n", 1);
+	exit(0);
 }
