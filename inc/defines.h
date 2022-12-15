@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:31:51 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/05 15:21:42 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:58:57 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		check_size(char **argv);
 void	sort_max1(t_stack **a, t_stack **b, t_stack *temp);
 void	sort_max2(t_stack **a, t_stack **b, t_stack *temp);
 void	check_order_stack_a(t_stack **a);
-void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks);
+void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks, size_t count);
 void	move_to_b(t_stack **a, t_stack **b, size_t cut);
 void	return_to_a(t_stack **a, t_stack **b);
 void	min_num_on_top(t_stack **a, char c);

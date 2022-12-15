@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:32:36 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/26 19:34:29 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:03:50 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	find_smallest(t_stack **a)
 {
-	t_stack	*temp;
+	t_stack		*temp;
 	size_t		i;
 
 	temp = *a;
@@ -31,7 +31,7 @@ size_t	find_smallest(t_stack **a)
 
 size_t	find_biggest(t_stack **a)
 {
-	t_stack	*temp;
+	t_stack		*temp;
 	size_t		i;
 
 	temp = *a;

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:30:06 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/26 19:01:00 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:04:42 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	three_numbers(t_stack **a, char c)
 
 void	five_numbers(t_stack **a, t_stack **b)
 {
-	while (ft_lstsize(*a) > 3)	
+	while (ft_lstsize(*a) > 3)
 	{
 		min_num_on_top(a, 'a');
 		push(a, b, 'b');

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:34:30 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/05 17:26:30 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/15 11:47:45 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	is_min(t_stack **a, size_t n);
 size_t	is_max(t_stack **a, size_t n);
 size_t	find_smallest(t_stack **a);
 size_t	find_biggest(t_stack **a);
-void	stack_in_order(t_stack *a, t_stack *b);
+void	stack_in_order(t_stack **a, t_stack **b);
 int		check_args(char **argv);
 int		check_doubles(char **argv);
 int		check_size(char **argv);
@@ -46,8 +46,8 @@ void	rotate(t_stack **lst);
 void	rev_rotate(t_stack **lst);
 void	ft_error(void);
 void	incorrect(t_stack *a, t_stack *b);
-void	read_instructions(char *lie, t_stack *a, t_stack *b, int *move);
-void	reading(t_stack *a, t_stack *b, int *move);
+void	read_instructions(char *lie, t_stack **a, t_stack **b, int *move);
+void	reading(t_stack **a, t_stack **b, int *move);
 t_stack	*init(char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:18:21 by framos-p          #+#    #+#             */
-/*   Updated: 2022/11/26 19:46:34 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:03:19 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	sort_max1(t_stack **a, t_stack **b, t_stack *temp)
 		rotate(b, 'b');
 }
 
-void	sort_max2(t_stack **a, t_stack **b,t_stack *temp)
+void	sort_max2(t_stack **a, t_stack **b, t_stack *temp)
 {
 	if (temp-> index - 1 == (*b)->index)
-		  	push(b, a, 'a');
+		push(b, a, 'a');
 	else if (temp-> index - 2 == (*b)-> index)
 	{
 		push(b, a, 'a');

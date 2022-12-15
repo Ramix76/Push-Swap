@@ -6,21 +6,19 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:25:09 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/05 11:20:26 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:16:31 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/defines.h"
 
-void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks)
+void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks, size_t count)
 {
 	size_t	cut;
 	size_t	x;
-	size_t	count;
 
-	count = 0;
 	cut = ft_lstsize(*a) / chunks;
-	while (count < chunks)
+	while (++count < chunks)
 	{
 		x = 0;
 		while (x < cut)
@@ -33,11 +31,10 @@ void	hundred_numbers(t_stack **a, t_stack **b, size_t chunks)
 			else
 				rotate(a, 'a');
 		}
-		count++;
 		indexation(a);
 	}
 	while (*a)
-			move_to_b(a, b, cut);
+		move_to_b(a, b, cut);
 	indexation(b);
 	return_to_a(a, b);
 }
@@ -64,7 +61,7 @@ void	check_order_stack_a(t_stack **a)
 	t_stack	*last;
 	size_t	length;
 
-	length = ft_lstsize(*a);	
+	length = ft_lstsize(*a);
 	last = ft_lstlast(*a);
 	if (length > 1
 		&& (*a)-> next-> index == ((*a)-> index - 1))
