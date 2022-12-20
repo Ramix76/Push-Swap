@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 12:49:02 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/15 12:24:34 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/20 16:42:41 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	swap(t_stack **lst)
 	t_stack	*temp;
 	t_stack	*temp2;
 
+	if (ft_lstsize(*(lst)) < 2)
+		return ;
 	temp = *lst;
 	temp2 = temp -> next;
 	if (temp -> next == 0)
@@ -34,6 +36,8 @@ void	push(t_stack **a, t_stack **b)
 {
 	t_stack	*temp;
 
+	if (!(*a))
+		return ;
 	temp = *a;
 	*a = (*a)-> next;
 	if (*a)
@@ -66,6 +70,8 @@ void	rev_rotate(t_stack **lst)
 	t_stack	*temp;
 	t_stack	*last;
 
+	if (ft_lstsize(*lst) < 2)
+		return ;
 	temp = *lst;
 	last = ft_lstlast(*lst);
 	last -> prev -> next = NULL;

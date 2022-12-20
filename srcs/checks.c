@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:40:49 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/05 14:08:28 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:18:19 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	check_size(char **argv)
 	max = "2147483647";
 	min = "-2147483648";
 	i = 1;
-	len = ft_strlen(argv[i]);
 	while (argv[i])
 	{
+		len = ft_strlen(argv[i]);
 		j = 0;
 		while (argv[i][j])
 		{

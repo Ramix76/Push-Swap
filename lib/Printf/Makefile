@@ -6,7 +6,7 @@
 #    By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/21 12:04:32 by framos-p          #+#    #+#              #
-#    Updated: 2022/12/05 13:20:40 by framos-p         ###   ########.fr        #
+#    Updated: 2022/12/19 12:28:09 by framos-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ ${NAME}:${OBJS} ${INCLUDE}/ft_printf.h
 	@echo "\n$(GREEN)libprintf compiled!$(DEF_COLOR)\n"
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c | $(OBJF)
-	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
+	#@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 ${OBJF}:

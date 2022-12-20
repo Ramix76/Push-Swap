@@ -6,11 +6,11 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:20:56 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/15 11:51:47 by framos-p         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:10:52 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/defines.h"
+#include "../inc/checker.h"
 
 t_stack	*init(char **argv)
 {
