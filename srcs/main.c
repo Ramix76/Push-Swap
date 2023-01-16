@@ -6,7 +6,7 @@
 /*   By: framos-p <framos-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:32:48 by framos-p          #+#    #+#             */
-/*   Updated: 2022/12/12 12:09:07 by framos-p         ###   ########.fr       */
+/*   Updated: 2023/01/16 10:55:55 by framos-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ void	resolve(t_stack **a, t_stack **b, int argc)
 	else if (argc - 1 <= 100)
 		hundred_numbers(a, b, 5, count);
 	else if (argc - 1 <= 500)
-		hundred_numbers(a, b, 10, count);
+		hundred_numbers(a, b, 8, count);
 }
